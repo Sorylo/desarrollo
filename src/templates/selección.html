@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+{% extends "layout.html" %}
+
+{% block content %}
+  </style>
+
+    <main>
+    <section class="formulario">
+      <form action="resultados.php" method="post">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" placeholder="Ingresa tu nombre">
+
+        <label for="sentimientos">¿Cómo te sientes hoy?</label>
+        <textarea id="sentimientos" placeholder="Escribe tus sentimientos aquí"></textarea>
+        <label for="talla">Talla</label>
+        <input type="number" name="talla" min="36" max="48" required />
+        <label for="color">Color</label>
+        <select name="color">
+          <option value="blanco">Blanco</option>
+          <option value="negro">Negro</option>
+          <option value="azul">Azul</option>
+          <option value="rojo">Rojo</option>
+          <option value="verde">Verde</option>
+        </select>
+
+        <label for="estilo">Estilo</label>
+        <select name="estilo">
+          <option value="original">Original</option>
+          <option value="con plataforma">Con plataforma</option>
+          <option value="con velcro">Con velcro</option>
+        </select>
+        <label for="genero">Género</label>
+        <select name="genero">
+          <option value="hombre">Hombre</option>
+          <option value="mujer">Mujer</option>
+        </select>
+        <label for="actividad">Actividad física</label>
+        <select name="actividad">
+          <option value="casual">Casual</option>
+          <option value="deporte">Deporte</option>
+          <option value="running">Running</option>
+        </select>
+        <input type="submit" value="Buscar" />
+      </form>
+    </section>
+  </main>
+
+  <script>
+    function seleccionarTenis() { }
+    // Obtener los valores de los campos de entrada
+    var nombre = document.getElementById("nombre").value;
+    var sentimientos = document.getElementById("sentimientos").value;
+    var imagen = document.getElementById("imagen").value;
+    var color = document.getElementById("color").value;
+    var talla = document.getElementById("talla").value;
+
+    // Crear una imagen y mostrarla en la página
+    var imagenSeleccionada = document.createElement("img");
+    imagenSeleccionada.src = imagen;
+    imagenSeleccionada.style.width = "200px";
+    imagenSeleccionada.style.height = "200px";
+
+    // Crear un mensaje personalizado para el usuario
+    var mensaje = "¡Hola " + nombre + "! Parece que estás " + sentimientos + ". Aquí tienes una imagen que representa tu idea:";
+
+    // Mostrar el mensaje y la imagen en la página
+    var resultado = document.createElement("div");
+    resultado.innerHTML = "<p>" + mensaje + "</p>";
+    ```html
+      resultado.appendChild(imagenSeleccionada);
+      
+      // Agregar el resultado a la página
+      var container = document.querySelector(".container");
+      container.appendChild(resultado);
+    }
+  </script>
+</body>
+
+{% endblock%}
+
+</html>
